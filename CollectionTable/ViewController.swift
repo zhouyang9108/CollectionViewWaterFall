@@ -40,7 +40,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         }
         //设置随机图片数组
         imgArray = [UIImage(named:"yin1")!,UIImage(named:"yin2")!,UIImage(named:"yin3")!,UIImage(named:"yin4")!,UIImage(named:"yin5")!]
-        imgArray = [UIImage(named:"1")!,UIImage(named:"2")!,UIImage(named:"3")!,UIImage(named:"4")!,UIImage(named:"5")!]
     }
     
 /*pragma mark -- UICollectionViewDataSource*/
@@ -76,6 +75,25 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.photoImageView.image = image
         return cell
     }
+    //设置Cell的布局
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 5, 5, 5)
+    }
+    
+//    //HeaderView头部视图
+//    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headerViewId, forIndexPath: indexPath) as! CollectionHeaderView
+//        headerView.backgroundColor = UIColor.whiteColor()
+//        headerView.initView()
+//        return headerView
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        let alertLimitView = UIAlertView(title: "提示", message: "这是第"+String(indexPath.row)+"个银老师", delegate: self, cancelButtonTitle: "取消")
+//        alertLimitView.tag = 0
+//        alertLimitView.frame = CGRectMake(self.view.center.x, self.view.center.y, 120, 120)
+//        alertLimitView.show()
+//    }
     
 
 
